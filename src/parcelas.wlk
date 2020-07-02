@@ -1,6 +1,7 @@
+import plantas.*
+import variedades.*
 
-
-class Parcela{
+object parcela{
 	var property ancho
 	var property largo
 	var property horasDeSol 
@@ -12,7 +13,7 @@ class Parcela{
 	}
 	
 	method cantidadMaximaQueTolera(){
-		if (ancho > largo) return self.superficie()/ 5
+		if (ancho > largo) return self.superficie() / 5
 		else return (self.superficie()/3)+largo
 	}
 	

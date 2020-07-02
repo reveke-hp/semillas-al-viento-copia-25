@@ -19,6 +19,14 @@ class Planta {
 	method horasDeSolQueTolera(){
 		return 7
 	}
+	method parcelaEsIdeal()
+	
+	method seAsociaConParcelaEcologica(){
+		return parcela.tieneSangreJoven() and self.parcelaEsIdeal()
+	}
+	method seAsociaConParcelaIndrustrial(){
+		return parcela.cantidadMaximaQueTolera() and self.esFuerte()
+	}
 }
 
 
@@ -47,7 +55,7 @@ class Soja inherits Planta{
 		else return 12
 	}
 	method parcelaEsIdeal(){
-		return parcela.horasDeSol() == self.horasDeSolQueTolera()
+		return (parcela.horasDeSol() == self.horasDeSolQueTolera())
 	}
 }
 
@@ -63,8 +71,9 @@ class Quinoa inherits Planta{
 		return super() or anoDeObtencion.between(2001,2008)
 	}
 	method parcelaEsIdeal(){
-		return parcela.plantas.any({plants => not plantas.altura()>1.5})
+		return parcela.plantas.any({plants => plantas.altura()>1.5})
 	}
+	
 }
 
 
