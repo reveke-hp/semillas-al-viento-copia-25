@@ -6,11 +6,11 @@ object inta {
 	var property parcelas = #{}
 	
 	method promedioDePlantas(){
-		return parcelas.cantidadDePlantas() / parcelas.size()
+		return parcela.cantidadDePlantas() / parcelas.size()
 	}
 	
 	method parcelaMasAutosustentable(){
-		return parcelas.cantidadDePlantas() > 4 and parcelas.promedioDePlantas().max()
+		return parcela.cantidadDePlantas() > 4 and parcelas.promedioDePlantas().max()
 	}
 
 }

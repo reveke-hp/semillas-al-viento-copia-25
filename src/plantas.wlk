@@ -26,7 +26,7 @@ class Planta {
 		return parcela.tieneSangreJoven() and self.parcelaEsIdeal()
 	}
 	method seAsociaConParcelaIndrustrial(){
-		return parcela.cantidadMaximaQueTolera() > 2 and self.esFuerte()
+		return  self.esFuerte() or parcela.cantidadMaximaQueTolera() > 2
 	}
 	
 }

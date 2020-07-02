@@ -1,7 +1,7 @@
 import plantas.*
 import variedades.*
 
-object parcela{
+class Parcela{
 	var property ancho 
 	var property largo 
 	var property horasDeSol
@@ -19,9 +19,12 @@ object parcela{
 		return plantas.any({semillas => semillas.anoDeObtencion()< 2012})
 	}
 	method plantarUnaPlanta(unaPlanta){
-		if (not self.tieneCupo()) plantas.add(unaPlanta)
-		else if(not self.diferenciaDeSol(unaPlanta)) plantas.add(unaPlanta)
+		if (not self.tieneCupo()) self.agregarPlanta(unaPlanta)
+		else if(not self.diferenciaDeSol(unaPlanta)) self.agregarPlanta(unaPlanta)
 		else self.error("No cumple los requisitos")
+	}
+	method agregarPlanta(unaPlanta){
+		plantas.add(unaPlanta)
 	}
 	method tieneCupo(){
 		return plantas.size()- 1 < self.cantidadMaximaQueTolera()
@@ -40,4 +43,12 @@ object parcela{
 	method promedioPlantasBienAsociadas(){
 		
 	}
+}
+
+class ParcelaEcologica inherits Parcela{
+	
+}
+
+class ParcelaIndustrial inherits Parcela{
+	
 }
