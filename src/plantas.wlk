@@ -28,16 +28,16 @@ class Menta inherits Planta{
 		return altura + 1
 	}
 	override method daNuevasSemillas(){
-		return super() and altura > 0.4
+		return super() or altura > 0.4
 	}
 }
 
 class Soja inherits Planta{
 	method espacioQueOcupa(){
-		return altura + 1
+		return altura/2
 	}
 	override method daNuevasSemillas(){
-		return super() and altura > 0.4
+		return super() or anoDeObtencion < 2007 or altura.between(0.75,0.9)
 	}
 	override method horasDeSolQueTolera(){
 		if (altura < 0.3 ) return 6
