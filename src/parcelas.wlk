@@ -30,4 +30,8 @@ object parcela{
 		return horasDeSol - unaPlanta.horasDeSol() > 2
 	}
 	
+	method contieneMayorA(medida){
+		return plantas.contains({plants => plants.altura()>1.5})
+	}
+	
 }
