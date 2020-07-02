@@ -20,8 +20,14 @@ class Parcela{
 		return plantas.any({semillas => semillas.anoDeObtencion()< 2012})
 	}
 	method plantarUnaPlanta(unaPlanta){
-		
+		if (not self.tieneCupo()) plantas.add(unaPlanta)
+		else if(not self.diferenciaDeSol()) plantas.add(unaPlanta)
+		else self.error("No cumple los requisitos")
 	}
-	
-
+	method tieneCupo(){
+		return plantas.size()-1 < self.cantidadMaximaQueTolera()
+	}
+	method diferenciaDeSol(){
+		return (self.horasDeSol() > plantas.all({plants => plantas.horasDeSolQueTolera()})) > 2
+	}
 }

@@ -1,0 +1,11 @@
+import parcelas.*
+import plantas.*
+import variedades.*
+
+test "testX" {
+
+	const parcelita = new Parcela(ancho = 20, largo = 1,horasDeSol = 10)
+	
+	assert.equals(20,parcelita.superficie())
+	
+}
