@@ -46,6 +46,9 @@ class Soja inherits Planta{
 		else if (altura.between(0.3,0.8)) return 7
 		else return 12
 	}
+	method parcelaEsIdeal(){
+		return parcela.horasDeSol() == self.horasDeSolQueTolera()
+	}
 }
 
 class Quinoa inherits Planta{
@@ -60,7 +63,7 @@ class Quinoa inherits Planta{
 		return super() or anoDeObtencion.between(2001,2008)
 	}
 	method parcelaEsIdeal(){
-		return parcela.plantas()
+		return parcela.plantas.any({plants => not plantas.altura()>1.5})
 	}
 }
 
