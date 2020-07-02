@@ -2,9 +2,9 @@ import plantas.*
 import variedades.*
 
 object parcela{
-	var property ancho = 1
-	var property largo = 0
-	var property horasDeSol = 0 
+	var property ancho 
+	var property largo 
+	var property horasDeSol
 	var property plantas = #{}
 	
 	
@@ -20,14 +20,14 @@ object parcela{
 	}
 	method plantarUnaPlanta(unaPlanta){
 		if (not self.tieneCupo()) plantas.add(unaPlanta)
-		else if(not self.diferenciaDeSol()) plantas.add(unaPlanta)
+		else if(not self.diferenciaDeSol(unaPlanta)) plantas.add(unaPlanta)
 		else self.error("No cumple los requisitos")
 	}
 	method tieneCupo(){
 		return plantas.size()- 1 < self.cantidadMaximaQueTolera()
 	}
-	method diferenciaDeSol(){
-		return horasDeSol - plantas.contains({plants => plants.horasDeSolQueTolera()})> 2
+	method diferenciaDeSol(unaPlanta){
+		return horasDeSol - unaPlanta.horasDeSol() > 2
 	}
 	
 }

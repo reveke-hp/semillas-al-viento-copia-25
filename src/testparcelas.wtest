@@ -3,17 +3,17 @@ import plantas.*
 import variedades.*
 
 test "testX" {
-
+	
 	parcela.ancho(20) 
 	parcela.largo(1)
 	parcela.horasDeSol(10)
 	
-	assert.equals(20,parcelita.superficie())
-	assert.equals(4,parcelita.cantidadMaximaQueTolera())
+	assert.equals(20,parcela.superficie())
+	assert.equals(4,parcela.cantidadMaximaQueTolera())
 	
 	const sojita = new Soja(anoDeObtencion= 2010,altura=1)
 	
-	parcelita.plantas([sojita,sojita,sojita,sojita])
+	parcela.plantas([sojita,sojita,sojita,sojita])
 	
 	assert.that(parcela.tieneSangreJoven())
 	assert.equals("No cumple los requisitos",parcela.plantarUnaPlanta(sojita))
