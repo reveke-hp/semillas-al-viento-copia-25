@@ -2,19 +2,17 @@ import plantas.*
 import variedades.*
 
 object parcela{
-	var property ancho
-	var property largo
-	var property horasDeSol 
+	var property ancho = 1
+	var property largo = 0
+	var property horasDeSol = 0 
 	var property plantas = #{}
 	
 	
-	method superficie(){
-		return ancho * largo
-	}
+	method superficie(){ return ancho * largo }
 	
-	method cantidadMaximaQueTolera(){
+	method cantidadMaximaQueTolera() {
 		if (ancho > largo) return self.superficie() / 5
-		else return (self.superficie()/3)+largo
+		else return self.superficie()/3 + largo
 	}
 	
 	method tieneSangreJoven(){
@@ -26,8 +24,10 @@ object parcela{
 		else self.error("No cumple los requisitos")
 	}
 	method tieneCupo(){
-		return plantas.size()-1 < self.cantidadMaximaQueTolera()
+		return plantas.size()- 1 < self.cantidadMaximaQueTolera()
 	}
-	// method diferenciaDeSol(){}
+	method diferenciaDeSol(){
+		return horasDeSol - plantas.contains({plants => plants.horasDeSolQueTolera()})> 2
+	}
 	
 }
