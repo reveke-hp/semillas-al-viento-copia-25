@@ -12,8 +12,8 @@ class Parcela{
 	}
 	
 	method cantidadMaximaQueTolera(){
-		if (ancho > largo) return self.superficie() / 5
-		else return (self.superficie()/3) + largo
+		if (ancho > largo) return self.superficie()/ 5
+		else return (self.superficie()/3)+largo
 	}
 	
 	method tieneSangreJoven(){
