@@ -1,6 +1,6 @@
 
 
-object parcela{
+class Parcela{
 	var property ancho
 	var property largo
 	var property horasDeSol 
@@ -27,7 +27,6 @@ object parcela{
 	method tieneCupo(){
 		return plantas.size()-1 < self.cantidadMaximaQueTolera()
 	}
-	method diferenciaDeSol(){
-		return (self.horasDeSol() - plantas.size({plants => plantas.horasDeSolQueTolera()}).asSet()) > 2
-	}
+	// method diferenciaDeSol(){}
+	
 }
