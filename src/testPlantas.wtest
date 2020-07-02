@@ -10,5 +10,16 @@ test "testX" {
 	assert.equals(2,mentita.espacioQueOcupa())
 	assert.that(not mentita2.daNuevasSemillas())
 	assert.equals(1.3,mentita2.espacioQueOcupa())
-
+	
+	const sojita = new Soja(anoDeObtencion= 2009,altura=0.6)
+	
+	assert.equals(7,sojita.horasDeSolQueTolera())
+	assert.that(not sojita.daNuevasSemillas())
+	assert.equals(0.3,sojita.espacioQueOcupa())
+	
+	const quinoa1 = new Quinoa(anoDeObtencion= 2010,altura=0.4)
+	const quinoa2 = new Quinoa(anoDeObtencion= 2006,altura=1.8)
+	
+	assert.that(quinoa1.daNuevasSemillas())
+	assert.that(quinoa2.daNuevasSemillas())
 }
