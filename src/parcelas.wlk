@@ -20,7 +20,8 @@ class Parcela{
 		return plantas.any({semillas => semillas.anoDeObtencion()< 2012})
 	}
 	method plantarUnaPlanta(unaPlanta){
-		if (plantas.add(unaPlanta) return 
-		else return self.error("no cumple los requisitos")
+		
 	}
+	
+
 }

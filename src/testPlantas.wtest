@@ -1,0 +1,12 @@
+import plantas.*
+import variedades.*
+
+test "testX" {
+	
+	const mentita = new Menta(anoDeObtencion= 2010,altura=1)
+	
+	assert.that(mentita.daNuevasSemillas())
+	assert.equals(2,mentita.espacioQueOcupa())
+	assert.that(true)
+
+}
