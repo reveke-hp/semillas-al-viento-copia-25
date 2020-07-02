@@ -12,5 +12,9 @@ object inta {
 	method parcelaMasAutosustentable(){
 		return parcela.cantidadDePlantas() > 4 and parcelas.promedioDePlantas().max()
 	}
+	
+	method mayorPorcentajeDeAsociadasBien(){
+		parcelas.max(planta.seAsociaConParcelaEcologica())
+	}
 
 }

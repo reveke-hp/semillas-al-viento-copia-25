@@ -46,9 +46,14 @@ class Parcela{
 }
 
 class ParcelaEcologica inherits Parcela{
-	
+	method seAsociaBien(unaPlanta){
+		return self.tieneSangreJoven() and unaPlanta.parcelaEsIdeal()
+	}
 }
 
 class ParcelaIndustrial inherits Parcela{
-	
+	method seAsociaBien(unaPlanta){
+		return self.cantidadDePlantas() > 2 and unaPlanta.esFuerte()
+	}
+		
 }

@@ -5,8 +5,8 @@ class SojaTransgenica inherits Soja{
 	override method daNuevasSemillas(){
 		return false
 	}
-	override method parcelaEsIdeal(){
-		return parcela.cantidadMaximaQueTolera() == 1
+    override method parcelaEsIdeal(unaParcela) {
+		return unaParcela.cantidadMaximaQueTolera() == 1
 	}
 	
 }
