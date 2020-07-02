@@ -8,6 +8,7 @@ class SojaTransgenica inherits Soja{
 	override method parcelaEsIdeal(){
 		return parcela.cantidadMaximaQueTolera() == 1
 	}
+	
 }
 
 class MentaPeperinata inherits Menta{

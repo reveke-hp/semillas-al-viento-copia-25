@@ -3,7 +3,7 @@ import parcelas.*
 class Planta {
 	var property anoDeObtencion
 	var property altura
-	
+	var property horasDeSolQueTolera = 7
 	method horasDeSol(){
 		return self.horasDeSolQueTolera()
 	}
@@ -20,11 +20,13 @@ class Planta {
 		return 7
 	}
 	
+	method parcelaEsIdeal()
+	
 	method seAsociaConParcelaEcologica(){
 		return parcela.tieneSangreJoven() and self.parcelaEsIdeal()
 	}
 	method seAsociaConParcelaIndrustrial(){
-		return parcela.cantidadMaximaQueTolera() and self.esFuerte()
+		return parcela.cantidadMaximaQueTolera() > 2 and self.esFuerte()
 	}
 }
 
@@ -36,7 +38,7 @@ class Menta inherits Planta{
 	override method daNuevasSemillas(){
 		return super() or altura > 0.4
 	}
-	method parcelaEsIdeal(){
+	override  method parcelaEsIdeal(){
 		return parcela.superficie()>6
 	}
 }
@@ -53,7 +55,7 @@ class Soja inherits Planta{
 		else if (altura.between(0.3,0.8)) return 7
 		else return 12
 	}
-	method parcelaEsIdeal(){
+	override method parcelaEsIdeal(){
 		return self.horasDeSolQueTolera() == parcela.horasDeSol()
 	}
 }
@@ -69,7 +71,7 @@ class Quinoa inherits Planta{
 	override method daNuevasSemillas(){
 		return super() or anoDeObtencion.between(2001,2008)
 	}
-	method parcelaEsIdeal(){
+	override method parcelaEsIdeal(){
 	 return parcela.contieneMayorA(1.5)
 	}
 	
