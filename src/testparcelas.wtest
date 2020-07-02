@@ -7,5 +7,12 @@ test "testX" {
 	const parcelita = new Parcela(ancho = 20, largo = 1,horasDeSol = 10)
 	
 	assert.equals(20,parcelita.superficie())
+	assert.equals(4,parcelita.cantidadMaximaQueTolera())
 	
+	const sojita = new Soja(anoDeObtencion= 2010,altura=1)
+	
+	parcelita.plantas([sojita,sojita,sojita,sojita])
+	
+	assert.that(parcelita.tieneSangreJoven())
+	assert.equals("No cumple los requisitos",parcelita.plantarUnaPlanta(sojita))
 }
