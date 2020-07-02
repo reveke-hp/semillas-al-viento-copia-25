@@ -16,10 +16,6 @@ class Planta {
 		return self.esFuerte()
 	}
 	
-	method horasDeSolQueTolera(){
-		return 7
-	}
-	
 }
 
 

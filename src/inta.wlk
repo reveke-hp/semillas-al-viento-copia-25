@@ -3,10 +3,11 @@ import variedades.*
 import parcelas.*
 
 object inta {
-	var property parcelas = #{}
+	var property conjuntoDeParcelas = #{}
 	
 	method promedioDePlantas(){
-		return parcela.cantidadDePlantas() / parcelas.size()
+		return conjuntoDeParcelas.sum({parcelas => parcelas.cantidadDePlantas()}) / 
+		conjuntoDeParcelas.size()
 	}
 	
 	method parcelaMasAutosustentable(){
@@ -14,7 +15,9 @@ object inta {
 	}
 	
 	method mayorPorcentajeDeAsociadasBien(){
-		parcelas.max(planta.seAsociaConParcelaEcologica())
+		
 	}
+	
+	
 
 }
