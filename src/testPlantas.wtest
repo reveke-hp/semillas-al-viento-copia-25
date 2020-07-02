@@ -4,9 +4,11 @@ import variedades.*
 test "testX" {
 	
 	const mentita = new Menta(anoDeObtencion= 2010,altura=1)
+	const mentita2 = new Menta(anoDeObtencion= 2010,altura=0.3)
 	
 	assert.that(mentita.daNuevasSemillas())
 	assert.equals(2,mentita.espacioQueOcupa())
-	assert.that(true)
+	assert.that(not mentita2.daNuevasSemillas())
+	assert.equals(1.3,mentita2.espacioQueOcupa())
 
 }
