@@ -45,3 +45,21 @@ class Soja inherits Planta{
 		else return 12
 	}
 }
+
+class Quinoa inherits Planta{
+	override method horasDeSolQueTolera(){
+		if (self.espacioQueOcupa() < 0.3) return 10
+		else return 7
+	}
+	method espacioQueOcupa(){
+		return altura/2
+	}
+	override method daNuevasSemillas(){
+		return super() or anoDeObtencion.between(2001,2008)
+	}
+}
+
+
+
+
+
