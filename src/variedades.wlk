@@ -7,5 +7,7 @@ class SojaTransgenica inherits Soja{
 }
 
 class MentaPeperinata inherits Menta{
-	
+	override method espacioQueOcupa(){
+		return (altura+1)*2
+	}
 }
