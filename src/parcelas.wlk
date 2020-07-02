@@ -34,4 +34,10 @@ object parcela{
 		return plantas.contains({plants => plants.altura()>1.5})
 	}
 	
+	method cantidadDePlantas(){
+		return plantas.size()
+	}
+	method promedioPlantasBienAsociadas(){
+		
+	}
 }

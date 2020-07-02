@@ -28,6 +28,7 @@ class Planta {
 	method seAsociaConParcelaIndrustrial(){
 		return parcela.cantidadMaximaQueTolera() > 2 and self.esFuerte()
 	}
+	
 }
 
 
