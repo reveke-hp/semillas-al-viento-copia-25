@@ -4,7 +4,9 @@ import variedades.*
 
 test "testX" {
 
-	const parcelita = new Parcela(ancho = 20, largo = 1,horasDeSol = 10)
+	parcela.ancho(20) 
+	parcela.largo(1)
+	parcela.horasDeSol(10)
 	
 	assert.equals(20,parcelita.superficie())
 	assert.equals(4,parcelita.cantidadMaximaQueTolera())
@@ -13,6 +15,6 @@ test "testX" {
 	
 	parcelita.plantas([sojita,sojita,sojita,sojita])
 	
-	assert.that(parcelita.tieneSangreJoven())
-	assert.equals("No cumple los requisitos",parcelita.plantarUnaPlanta(sojita))
+	assert.that(parcela.tieneSangreJoven())
+	assert.equals("No cumple los requisitos",parcela.plantarUnaPlanta(sojita))
 }

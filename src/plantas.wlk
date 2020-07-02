@@ -1,5 +1,4 @@
-
-
+import parcelas.*
 
 class Planta {
 	var property anoDeObtencion
@@ -30,6 +29,9 @@ class Menta inherits Planta{
 	override method daNuevasSemillas(){
 		return super() or altura > 0.4
 	}
+	method parcelaEsIdeal(){
+		return parcela.superficie()>6
+	}
 }
 
 class Soja inherits Planta{
@@ -56,6 +58,9 @@ class Quinoa inherits Planta{
 	}
 	override method daNuevasSemillas(){
 		return super() or anoDeObtencion.between(2001,2008)
+	}
+	method parcelaEsIdeal(){
+		return parcela.plantas()
 	}
 }
 
