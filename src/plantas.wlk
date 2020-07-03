@@ -15,7 +15,6 @@ class Planta {
 	method daNuevasSemillas(){
 		return self.esFuerte()
 	}
-	
 }
 
 

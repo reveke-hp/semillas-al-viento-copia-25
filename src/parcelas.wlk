@@ -5,7 +5,7 @@ class Parcela{
 	var property ancho 
 	var property largo 
 	var property horasDeSol
-	var property plantas = #{}
+	var property plantas = []
 	
 	
 	method superficie(){ return ancho * largo }
@@ -47,7 +47,10 @@ class Parcela{
 
 class ParcelaEcologica inherits Parcela{
 	method seAsociaBien(unaPlanta){
-		return self.tieneSangreJoven() and unaPlanta.parcelaEsIdeal()
+		return self.tieneSangreJoven() and unaPlanta.parcelaEsIdeal(self)
+	}
+	method promedioDeBienAsociados(){
+		return plantas.count({parce => parce.seAsociaBien(plantas)})
 	}
 }
 

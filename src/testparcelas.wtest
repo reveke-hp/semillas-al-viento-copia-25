@@ -4,12 +4,8 @@ import variedades.*
 
 test "testX" {
 	
-	const parcela = new Parcela()
-	
-	parcela.ancho(20) 
-	parcela.largo(1)
-	parcela.horasDeSol(10)
-	
+	const parcela = new Parcela(ancho =20,largo =1,horasDeSol= 10)
+
 	assert.equals(20,parcela.superficie())
 	assert.equals(4,parcela.cantidadMaximaQueTolera())
 	
@@ -19,4 +15,10 @@ test "testX" {
 	
 	assert.that(parcela.tieneSangreJoven())
 	assert.throwsException(parcela.plantarUnaPlanta(sojita))
+	
+	const parcela1 = new ParcelaEcologica()
+	parcela1.agregarPlanta(sojita)
+	
+	assert.that(not parcela1.seAsociaBien(sojita))
 }
+
