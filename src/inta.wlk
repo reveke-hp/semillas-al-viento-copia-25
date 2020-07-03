@@ -11,11 +11,11 @@ object inta {
 	}
 	
 	method parcelaMasAutosustentable(){
-		return parcela.cantidadDePlantas() > 4 and parcelas.promedioDePlantas().max()
+		return conjuntoDeParcelas.map({parcelas => parcelas.cantidadDePlantas()>4}) and 
+		self.mayorPorcentajeDeAsociadasBien()
 	}
-	
 	method mayorPorcentajeDeAsociadasBien(){
-		
+		return conjuntoDeParcelas.max({parcela => parcela.totalAsociados()})
 	}
 	
 	
