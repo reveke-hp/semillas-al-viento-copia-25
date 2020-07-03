@@ -50,7 +50,7 @@ class ParcelaEcologica inherits Parcela{
 		return self.tieneSangreJoven() or unaPlanta.parcelaEsIdeal(self)
 	}
 	method totalAsociados(){
-		return plantas.sum({plants => plants.parcelaEsIdeal(self)})
+		return plantas.sum({planta => planta})
 	}
 }
 
