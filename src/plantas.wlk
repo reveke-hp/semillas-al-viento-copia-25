@@ -1,5 +1,5 @@
 import parcelas.*
-
+  a
 class Planta {
 	var property anoDeObtencion
 	var property altura
